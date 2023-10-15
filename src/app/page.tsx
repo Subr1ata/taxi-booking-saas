@@ -1,10 +1,18 @@
 import { UserButton } from '@clerk/nextjs'
 import Image from 'next/image'
+import Booking from '../../components/Booking/Booking'
 
 export default function Home() {
   return (
     <div>
-      <h2>Subscribe to Tubeguruji</h2>
+      <div className='grid grid-cols-1 md:grid-cols-3'>
+        <div>
+          <Booking />
+        </div>
+        <div className='col-span-2 bg-red-100'>
+          Map
+        </div>
+      </div>
     </div>
   )
 }
