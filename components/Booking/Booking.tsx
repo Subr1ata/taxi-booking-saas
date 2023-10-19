@@ -1,7 +1,7 @@
 "use client";
-
 import React, { useEffect, useState } from "react";
 import AutocompleteAddress from "./AutocompleteAddress";
+import Cars from "./Cars";
 
 export default function Booking() {
   const [screenHeight, setScreenHeight] = useState(window.innerHeight * 0.72);
@@ -31,6 +31,7 @@ export default function Booking() {
         style={{ height: screenHeight }}
       >
         <AutocompleteAddress />
+        <Cars />
       </div>
     </div>
   );
