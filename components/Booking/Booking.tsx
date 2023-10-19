@@ -7,7 +7,7 @@ export default function Booking() {
   const [screenHeight, setScreenHeight] = useState(window.innerHeight * 0.72);
   useEffect(() => {
     // Check if window is defined (to handle server-side rendering)
-    if (typeof window !== 'undefined') {
+    if (typeof window !== "undefined") {
       setScreenHeight(window.innerHeight * 0.72);
 
       const updateScreenHeight = () => {
