@@ -6,17 +6,22 @@ import AutocompleteAddress from "./AutocompleteAddress";
 export default function Booking() {
   const [screenHeight, setScreenHeight] = useState(window.innerHeight * 0.72);
   useEffect(() => {
-    const updateScreenHeight = () => {
+    // Check if window is defined (to handle server-side rendering)
+    if (typeof window !== 'undefined') {
       setScreenHeight(window.innerHeight * 0.72);
-    };
 
-    // Add an event listener to update the height when the window is resized.
-    window.addEventListener("resize", updateScreenHeight);
+      const updateScreenHeight = () => {
+        setScreenHeight(window.innerHeight * 0.72);
+      };
 
-    // Clean up the event listener when the component unmounts.
-    return () => {
-      window.removeEventListener("resize", updateScreenHeight);
-    };
+      // Add an event listener to update the height when the window is resized.
+      window.addEventListener("resize", updateScreenHeight);
+
+      // Clean up the event listener when the component unmounts.
+      return () => {
+        window.removeEventListener("resize", updateScreenHeight);
+      };
+    }
   }, []);
   return (
     <div className="p-5">
